@@ -6,7 +6,8 @@ target 'PaymentApp' do
   use_frameworks!
 
   # Pods for PaymentApp
-  pod 'Alamofire', '~> 5.0.0.beta.1'
+  pod 'Alamofire', '~> 4.4'
+  pod 'SwiftyJSON'
   
   target 'PaymentAppTests' do
     inherit! :search_paths

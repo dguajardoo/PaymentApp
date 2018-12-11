@@ -16,6 +16,7 @@
 		868B02DF21BF442200AA6751 /* PaymentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B02DE21BF442200AA6751 /* PaymentAppTests.swift */; };
 		868B02EA21BF442200AA6751 /* PaymentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B02E921BF442200AA6751 /* PaymentAppUITests.swift */; };
 		86F2515821BF50B500F0DBED /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2515721BF50B500F0DBED /* CreditCardViewController.swift */; };
+		86F2515A21BF781600F0DBED /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2515921BF781600F0DBED /* BankViewController.swift */; };
 		CF86CC07D0F41253175E2CC7 /* Pods_PaymentAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E5765D35B27897B592866A /* Pods_PaymentAppUITests.framework */; };
 		DBDEB48B9A3F1DE0A9B3041D /* Pods_PaymentAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEF5210D1447730DABB1B9CF /* Pods_PaymentAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		868B02E921BF442200AA6751 /* PaymentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAppUITests.swift; sourceTree = "<group>"; };
 		868B02EB21BF442200AA6751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86F2515721BF50B500F0DBED /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		86F2515921BF781600F0DBED /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		95B1DC05E4758C74A81C904F /* Pods-PaymentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp.release.xcconfig"; sourceTree = "<group>"; };
 		9AC9D36EE34CB2C3369DACE1 /* Pods-PaymentAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaymentAppUITests/Pods-PaymentAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEF5210D1447730DABB1B9CF /* Pods_PaymentAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PaymentAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +164,7 @@
 			children = (
 				868B02CB21BF442100AA6751 /* ViewController.swift */,
 				86F2515721BF50B500F0DBED /* CreditCardViewController.swift */,
+				86F2515921BF781600F0DBED /* BankViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -361,12 +364,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,6 +409,7 @@
 			files = (
 				868B02CC21BF442100AA6751 /* ViewController.swift in Sources */,
 				868B02CA21BF442100AA6751 /* AppDelegate.swift in Sources */,
+				86F2515A21BF781600F0DBED /* BankViewController.swift in Sources */,
 				86F2515821BF50B500F0DBED /* CreditCardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
