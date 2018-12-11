@@ -121,5 +121,15 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SegueBank" {
+            
+            let secController = segue.destination as! BankViewController
+            secController.monto = lblMonto.text
+            secController.creditCard = lblCreditCard.text
+            
+        }
+    }
 
 }
