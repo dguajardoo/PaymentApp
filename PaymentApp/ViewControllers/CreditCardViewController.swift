@@ -10,6 +10,9 @@ import UIKit
 
 class CreditCardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+   
+    @IBOutlet weak var lblCreditCard: UILabel!
+    @IBOutlet weak var lblMonto: UILabel!
     @IBOutlet weak var tableCreditCard: UITableView!
     
     var monto: String? = ""
@@ -23,6 +26,8 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.lblMonto.text = monto
+        
         self.tableCreditCard.delegate = self
         self.tableCreditCard.dataSource = self
     }
@@ -67,7 +72,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("You tapped cell number \(indexPath.row).")
-        
+        self.lblCreditCard.text = String(indexPath.row)
     }
     
     /*

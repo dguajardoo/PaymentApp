@@ -119,6 +119,8 @@
                         <viewLayoutGuide key="safeArea" id="4JS-OB-ydb"/>
                     </view>
                     <connections>
+                        <outlet property="lblCreditCard" destination="CZD-eo-jI2" id="NYQ-Qw-wCH"/>
+                        <outlet property="lblMonto" destination="Xw4-Sm-09M" id="vqW-Jk-gbD"/>
                         <outlet property="tableCreditCard" destination="BSc-MA-48i" id="3ps-zh-MPS"/>
                     </connections>
                 </viewController>
