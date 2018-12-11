@@ -24,11 +24,21 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueCreditCard" {
+        
+        if txtMonto.text == "" {
+            let alert = UIAlertController(title: "Did you bring your towel?", message: "It's recommended you bring your towel before continuing.", preferredStyle: .alert)
             
-            let secController = segue.destination as! CreditCardViewController
-            secController.monto = txtMonto.text
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
             
+            self.present(alert, animated: true)
+        } else {
+            if segue.identifier == "SegueCreditCard" {
+                
+                let secController = segue.destination as! CreditCardViewController
+                secController.monto = txtMonto.text
+                
+            }
         }
     }
     

@@ -15,10 +15,12 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var monto: String? = ""
     var creditCard: String? = ""
     var arrayBank: [JSON] = []
+    var auxCreditCard: String? = ""
     
     
-    
+    @IBOutlet weak var lblMonto: UILabel!
     @IBOutlet weak var tableViewBank: UITableView!
+    @IBOutlet weak var lblCreditCard: UILabel!
     @IBOutlet weak var lblBank: UILabel!
     
     override func viewDidLoad() {
@@ -28,12 +30,25 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableViewBank.delegate = self
         self.tableViewBank.dataSource = self
         
+        self.lblMonto.text = monto
+        self.lblCreditCard.text = creditCard
+        print("holasdsadasd ", monto)
+        print("holasdsadasd \(self.creditCard)")
+        print("holasdsadasd \(self.auxCreditCard)")
+        
         self.CallAPI()
     }
     
 
     func CallAPI() {
-        Alamofire.request("https://api.mercadopago.com/v1/payment_methods/card_issuers?public_key=444a9ef5-8a6b-429f-abdf-587639155d88&payment_method_id=visa").responseJSON { response in
+        let url: String? = "https://api.mercadopago.com/v1/payment_methods/card_issuers?public_key=444a9ef5-8a6b-429f-abdf-587639155d88&payment_method_id="
+        let param = self.auxCreditCard
+        let full = "\(url)\(param)"
+        
+        print(full)
+        
+    
+        Alamofire.request(full).responseJSON { response in
             if let result = response.result.value {
                 //print("JSON: \(result)")
                 let json = JSON(result)

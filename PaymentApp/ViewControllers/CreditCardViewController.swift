@@ -18,7 +18,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet weak var tableCreditCard: UITableView!
     
     var monto: String? = ""
-    
+    var auxCreditCard: String? = ""
     var arr = ["dfsd","sdfsdf", "sdfsdfsdf", "s"]
     var arrayCreditCard: [JSON] = []
     
@@ -114,6 +114,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         
         print("You tapped cell number \(indexPath.row).")
         self.lblCreditCard.text = self.arrayCreditCard[indexPath.row]["name"].stringValue
+        self.auxCreditCard = self.arrayCreditCard[indexPath.row]["id"].stringValue
     }
     
     
@@ -128,6 +129,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
             let secController = segue.destination as! BankViewController
             secController.monto = lblMonto.text
             secController.creditCard = lblCreditCard.text
+            secController.auxCreditCard = auxCreditCard
             
         }
     }

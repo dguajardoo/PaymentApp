@@ -209,6 +209,8 @@
                     </view>
                     <connections>
                         <outlet property="lblBank" destination="zxQ-4I-AQb" id="un2-S6-7sy"/>
+                        <outlet property="lblCreditCard" destination="YV7-JY-ZHK" id="Oew-0b-wEf"/>
+                        <outlet property="lblMonto" destination="3Zn-oY-gcS" id="ZZx-rY-McO"/>
                         <outlet property="tableViewBank" destination="uVB-7B-rXf" id="hmq-fr-MQB"/>
                     </connections>
                 </viewController>
