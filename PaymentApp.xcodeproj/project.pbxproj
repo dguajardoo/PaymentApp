@@ -15,6 +15,7 @@
 		868B02D421BF442200AA6751 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B02D221BF442200AA6751 /* LaunchScreen.storyboard */; };
 		868B02DF21BF442200AA6751 /* PaymentAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B02DE21BF442200AA6751 /* PaymentAppTests.swift */; };
 		868B02EA21BF442200AA6751 /* PaymentAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B02E921BF442200AA6751 /* PaymentAppUITests.swift */; };
+		86D8D9C421C03CE80068F447 /* InstallmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D8D9C321C03CE80068F447 /* InstallmentsViewController.swift */; };
 		86F2515821BF50B500F0DBED /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2515721BF50B500F0DBED /* CreditCardViewController.swift */; };
 		86F2515A21BF781600F0DBED /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F2515921BF781600F0DBED /* BankViewController.swift */; };
 		CF86CC07D0F41253175E2CC7 /* Pods_PaymentAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26E5765D35B27897B592866A /* Pods_PaymentAppUITests.framework */; };
@@ -55,6 +56,7 @@
 		868B02E521BF442200AA6751 /* PaymentAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaymentAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B02E921BF442200AA6751 /* PaymentAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentAppUITests.swift; sourceTree = "<group>"; };
 		868B02EB21BF442200AA6751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86D8D9C321C03CE80068F447 /* InstallmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallmentsViewController.swift; sourceTree = "<group>"; };
 		86F2515721BF50B500F0DBED /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		86F2515921BF781600F0DBED /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		95B1DC05E4758C74A81C904F /* Pods-PaymentApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaymentApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaymentApp/Pods-PaymentApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				868B02CB21BF442100AA6751 /* ViewController.swift */,
 				86F2515721BF50B500F0DBED /* CreditCardViewController.swift */,
 				86F2515921BF781600F0DBED /* BankViewController.swift */,
+				86D8D9C321C03CE80068F447 /* InstallmentsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 			files = (
 				868B02CC21BF442100AA6751 /* ViewController.swift in Sources */,
 				868B02CA21BF442100AA6751 /* AppDelegate.swift in Sources */,
+				86D8D9C421C03CE80068F447 /* InstallmentsViewController.swift in Sources */,
 				86F2515A21BF781600F0DBED /* BankViewController.swift in Sources */,
 				86F2515821BF50B500F0DBED /* CreditCardViewController.swift in Sources */,
 			);

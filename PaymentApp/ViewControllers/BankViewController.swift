@@ -16,8 +16,10 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var creditCard: String? = ""
     var arrayBank: [JSON] = []
     var auxCreditCard: String? = ""
+    var auxBank: String? = ""
     
     
+    @IBOutlet weak var btnSeguir: UIButton!
     @IBOutlet weak var lblMonto: UILabel!
     @IBOutlet weak var tableViewBank: UITableView!
     @IBOutlet weak var lblCreditCard: UILabel!
@@ -32,23 +34,18 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.lblMonto.text = monto
         self.lblCreditCard.text = creditCard
-        print("holasdsadasd ", monto)
-        print("holasdsadasd \(self.creditCard)")
-        print("holasdsadasd \(self.auxCreditCard)")
-        
+       
         self.CallAPI()
     }
     
 
     func CallAPI() {
-        let url: String? = "https://api.mercadopago.com/v1/payment_methods/card_issuers?public_key=444a9ef5-8a6b-429f-abdf-587639155d88&payment_method_id="
-        let param = self.auxCreditCard
-        let full = "\(url)\(param)"
         
-        print(full)
+        let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id":self.auxCreditCard!]
         
-    
-        Alamofire.request(full).responseJSON { response in
+        let url: String? = "https://api.mercadopago.com/v1/payment_methods/card_issuers"
+        
+        Alamofire.request(url!, method: .get, parameters: parametros).responseJSON { response in
             if let result = response.result.value {
                 //print("JSON: \(result)")
                 let json = JSON(result)
@@ -111,6 +108,40 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         print("You tapped cell number \(indexPath.row).")
         self.lblBank.text = self.arrayBank[indexPath.row]["name"].stringValue
+        self.auxBank = self.arrayBank[indexPath.row]["id"].stringValue
     }
+    
+    
+    
+    
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+        let cc = lblBank.text
+        if (cc?.trimmingCharacters(in: NSCharacterSet.whitespaces).isEmpty)! {
+            let alert = UIAlertController(title: "Alerta", message: "Seleccione un banco.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else {
+            if segue.identifier == "SegueInstallments" {
+                
+                let secController = segue.destination as! InstallmentsViewController
+                secController.monto = lblMonto.text
+                secController.creditCard = lblCreditCard.text
+                secController.auxCreditCard = auxCreditCard
+                secController.bank = lblBank.text
+                secController.auxBank = auxBank
+                
+                
+            }
+        }
+        
+     }
 
 }

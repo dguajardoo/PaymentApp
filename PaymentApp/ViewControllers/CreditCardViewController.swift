@@ -124,14 +124,22 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "SegueBank" {
+        let cc = lblCreditCard.text
+        if (cc?.trimmingCharacters(in: NSCharacterSet.whitespaces).isEmpty)! {
+            let alert = UIAlertController(title: "Alerta", message: "Seleccione una tarjeta de credito.", preferredStyle: .alert)
             
-            let secController = segue.destination as! BankViewController
-            secController.monto = lblMonto.text
-            secController.creditCard = lblCreditCard.text
-            secController.auxCreditCard = auxCreditCard
-            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+        else {
+            if segue.identifier == "SegueBank" {
+                
+                let secController = segue.destination as! BankViewController
+                secController.monto = lblMonto.text
+                secController.creditCard = lblCreditCard.text
+                secController.auxCreditCard = auxCreditCard
+                
+            }
         }
     }
-
 }
