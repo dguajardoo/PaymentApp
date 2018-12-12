@@ -105,6 +105,13 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         
         // set the text from the data model
         cell.textLabel?.text = self.arrayCreditCard[indexPath.row]["name"].stringValue
+        
+        //let imageUrlString = self.arrayCreditCard[indexPath.row]["imagen"].stringValue
+        //let imageUrl = URL(string: imageUrlString ?? "")!
+        //let imageData = try! Data(contentsOf: imageUrl)
+        //let image = UIImage(data: imageData)
+        //cell.imageView?.image = image
+        
         return cell
         
     }
