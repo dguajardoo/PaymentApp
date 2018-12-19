@@ -18,6 +18,7 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var auxCreditCard: String? = ""
     var auxBank: String? = ""
     
+    var BanksArray = [Bank]()
     
     @IBOutlet weak var btnSeguir: UIButton!
     @IBOutlet weak var lblMonto: UILabel!
@@ -35,10 +36,11 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.lblMonto.text = monto
         self.lblCreditCard.text = creditCard
        
-        self.CallAPI()
+        self.Call()
     }
     
 
+    /*
     func CallAPI() {
         
         let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id":self.auxCreditCard!]
@@ -66,6 +68,18 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
     }
+ */
+    
+    func Call()
+    {
+        PaymentAppSerives.CallAPIBank(id: self.auxCreditCard!){(bank) in
+            if let bank = bank {
+                self.BanksArray = bank
+                self.tableViewBank.reloadData()
+                
+            }
+        }
+    }
     
     
     
@@ -86,8 +100,8 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return self.arrayBank.count
+        print("qwertuiop", self.BanksArray.count)
+        return self.BanksArray.count
         
     }
     
@@ -98,7 +112,7 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell:UITableViewCell = self.tableViewBank.dequeueReusableCell(withIdentifier: "CellBank") as UITableViewCell!
         
         // set the text from the data model
-        cell.textLabel?.text = self.arrayBank[indexPath.row]["name"].stringValue
+        cell.textLabel?.text = self.BanksArray[indexPath.row].name
         return cell
         
     }
@@ -107,8 +121,8 @@ class BankViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("You tapped cell number \(indexPath.row).")
-        self.lblBank.text = self.arrayBank[indexPath.row]["name"].stringValue
-        self.auxBank = self.arrayBank[indexPath.row]["id"].stringValue
+        self.lblBank.text = self.BanksArray[indexPath.row].name
+        self.auxBank = self.BanksArray[indexPath.row].id
     }
     
     

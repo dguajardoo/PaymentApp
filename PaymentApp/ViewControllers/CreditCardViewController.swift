@@ -19,10 +19,8 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     
     var monto: String? = ""
     var auxCreditCard: String? = ""
-    var arr = ["dfsd","sdfsdf", "sdfsdfsdf", "s"]
-    var arrayCreditCard: [JSON] = []
     
-    
+    var CreditCardsArray = [CreditCard]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +31,23 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         self.tableCreditCard.delegate = self
         self.tableCreditCard.dataSource = self
         
-        self.CallAPI()
+        //self.CallAPI()
+        self.Call()
     }
     
     
+    func Call()
+    {
+        PaymentAppSerives.CallAPICredidCard{(creditCards) in
+            if let creditCards = creditCards {
+                self.CreditCardsArray = creditCards
+                self.tableCreditCard.reloadData()
+                
+            }
+        }
+    }
     
+    /*
     func CallAPI() {
         Alamofire.request("https://api.mercadopago.com/v1/payment_methods?public_key=444a9ef5-8a6b-429f-abdf-587639155d88").responseJSON { response in
             if let result = response.result.value {
@@ -62,6 +72,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         }
 
     }
+ */
     
     
     
@@ -93,7 +104,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return self.arrayCreditCard.count
+        return self.CreditCardsArray.count
         
     }
     
@@ -104,7 +115,7 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         let cell:UITableViewCell = self.tableCreditCard.dequeueReusableCell(withIdentifier: "MyCell") as UITableViewCell!
         
         // set the text from the data model
-        cell.textLabel?.text = self.arrayCreditCard[indexPath.row]["name"].stringValue
+        cell.textLabel?.text = self.CreditCardsArray[indexPath.row].name
         return cell
         
     }
@@ -113,8 +124,8 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("You tapped cell number \(indexPath.row).")
-        self.lblCreditCard.text = self.arrayCreditCard[indexPath.row]["name"].stringValue
-        self.auxCreditCard = self.arrayCreditCard[indexPath.row]["id"].stringValue
+        self.lblCreditCard.text = self.CreditCardsArray[indexPath.row].name
+        self.auxCreditCard = self.CreditCardsArray[indexPath.row].id
     }
     
     

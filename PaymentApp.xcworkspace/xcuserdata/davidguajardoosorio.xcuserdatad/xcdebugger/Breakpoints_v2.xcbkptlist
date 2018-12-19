@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/ViewController.swift"
-            timestampString = "566266147.443884"
+            timestampString = "566267088.943856"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/ViewController.swift"
-            timestampString = "566266147.4439729"
+            timestampString = "566267088.9439501"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/ViewController.swift"
-            timestampString = "566266147.4440449"
+            timestampString = "566267088.944026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
@@ -58,29 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/BankViewController.swift"
-            timestampString = "566266147.44412"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "CallAPI()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PaymentApp/ViewControllers/BankViewController.swift"
-            timestampString = "566266147.444218"
+            timestampString = "566945884.324762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "52"
             endingLineNumber = "52"
-            landmarkName = "CallAPI()"
-            landmarkType = "7">
+            landmarkName = "BankViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/BankViewController.swift"
-            timestampString = "566266147.4443049"
+            timestampString = "566945884.324855"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "CallAPI()"
-            landmarkType = "7">
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "BankViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -106,39 +90,55 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/BankViewController.swift"
-            timestampString = "566266147.444388"
+            timestampString = "566945884.324937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "CallAPI()"
-            landmarkType = "7">
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "BankViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PaymentApp/ViewControllers/BankViewController.swift"
-            timestampString = "566266147.44447"
+            timestampString = "566945884.325011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "CallAPI()"
-            landmarkType = "7">
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "BankViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PaymentApp/ViewControllers/BankViewController.swift"
+            timestampString = "566945884.325087"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "BankViewController"
+            landmarkType = "3">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "PaymentApp.BankViewController.CallAPI() -&gt; ()"
                   moduleName = "PaymentApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidguajardoosorio/Desktop/untitled%20folder/version2/PaymentApp/PaymentApp/ViewControllers/BankViewController.swift"
-                  timestampString = "566249446.037138"
+                  urlString = "file:///Users/davidguajardoosorio/Desktop/PaymentApp/PaymentApp/ViewControllers/BankViewController.swift"
+                  timestampString = "566928730.665271"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "48"
@@ -146,14 +146,14 @@
                   offsetFromSymbolStart = "592">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in PaymentApp.BankViewController.CallAPI() -&gt; ()"
                   moduleName = "PaymentApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/davidguajardoosorio/Desktop/untitled%20folder/version2/PaymentApp/PaymentApp/ViewControllers/BankViewController.swift"
-                  timestampString = "566249446.041752"
+                  urlString = "file:///Users/davidguajardoosorio/Desktop/PaymentApp/PaymentApp/ViewControllers/BankViewController.swift"
+                  timestampString = "566928730.683821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "49"

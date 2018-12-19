@@ -30,6 +30,8 @@ class InstallmentsViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     @IBOutlet weak var btnInstallments: UIButton!
     
+    var InstallmentsArray = [Installment]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,7 @@ class InstallmentsViewController: UIViewController, UIPickerViewDelegate, UIPick
         lblCreditCard.text = creditCard
         lblBank.text = bank
         
-        self.CallAPI()
+        self.Call()
     }
     
    
@@ -62,6 +64,7 @@ class InstallmentsViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.present(alert,animated: true, completion: nil )
     }
     
+    /*
     func CallAPI() {
         
         let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id":self.auxCreditCard!, "amount": self.monto!, "issuer.id": Int(self.auxBank!)]
@@ -88,22 +91,43 @@ class InstallmentsViewController: UIViewController, UIPickerViewDelegate, UIPick
             }
         }
     }
+ */
+    
+    
+    
+    func Call()
+    {
+        PaymentAppSerives.CallAPIInstallment(id: self.auxCreditCard!, monto: self.monto!, bank: self.auxBank!){(bank) in
+            if let bank = bank {
+                self.InstallmentsArray = bank
+                //self.tableViewBank.reloadData()
+                
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return arrayInstallments.count
+        return InstallmentsArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return arrayInstallments[row]["recommended_message"].stringValue
+        return InstallmentsArray[row].recommended_message
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        lblInstallments.text = arrayInstallments[row]["recommended_message"].stringValue
+        lblInstallments.text = InstallmentsArray[row].recommended_message
         
         
     }
