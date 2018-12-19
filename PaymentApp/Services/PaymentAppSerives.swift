@@ -2,7 +2,11 @@
 //  PaymentAppSerives.swift
 //  PaymentApp
 //
+<<<<<<< HEAD
 //  Created by David Guajardo Osorio on 12/19/18.
+=======
+//  Created by Josue Hernandez Gonzalez on 19/12/2018.
+>>>>>>> 2dcdc16d2e0e8f466e85d34072a2c967fbbac1d3
 //  Copyright © 2018 David Guajardo Osorio. All rights reserved.
 //
 
@@ -11,8 +15,13 @@ import Alamofire
 import SwiftyJSON
 
 class PaymentAppSerives: NSObject {
+<<<<<<< HEAD
 
     class func CallAPICredidCard(completion: @escaping (_ creditCard: [CreditCard]?) -> ()) {
+=======
+    
+    class func CallAPI(completion: ([CreditCard]?)) {
+>>>>>>> 2dcdc16d2e0e8f466e85d34072a2c967fbbac1d3
         Alamofire.request("https://api.mercadopago.com/v1/payment_methods?public_key=444a9ef5-8a6b-429f-abdf-587639155d88", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
             var tmp: NSMutableArray = []
@@ -38,6 +47,7 @@ class PaymentAppSerives: NSObject {
         }
     }
     
+<<<<<<< HEAD
     class func CallAPIBank(id: String, completion: @escaping (_ bank: [Bank]?) -> ()) {
         
         let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id": id]
@@ -108,4 +118,6 @@ class PaymentAppSerives: NSObject {
     }
     
     
+=======
+>>>>>>> 2dcdc16d2e0e8f466e85d34072a2c967fbbac1d3
 }

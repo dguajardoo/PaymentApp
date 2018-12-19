@@ -115,7 +115,18 @@ class CreditCardViewController: UIViewController, UITableViewDataSource, UITable
         let cell:UITableViewCell = self.tableCreditCard.dequeueReusableCell(withIdentifier: "MyCell") as UITableViewCell!
         
         // set the text from the data model
+<<<<<<< HEAD
         cell.textLabel?.text = self.CreditCardsArray[indexPath.row].name
+=======
+        cell.textLabel?.text = self.arrayCreditCard[indexPath.row]["name"].stringValue
+        
+        //let imageUrlString = self.arrayCreditCard[indexPath.row]["imagen"].stringValue
+        //let imageUrl = URL(string: imageUrlString ?? "")!
+        //let imageData = try! Data(contentsOf: imageUrl)
+        //let image = UIImage(data: imageData)
+        //cell.imageView?.image = image
+        
+>>>>>>> 2dcdc16d2e0e8f466e85d34072a2c967fbbac1d3
         return cell
         
     }
