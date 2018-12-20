@@ -74,14 +74,15 @@ class PaymentAppSerives: NSObject {
     
     class func CallAPIInstallment(id: String, monto: String, bank: String, completion: @escaping (_ bank: [Installment]?) -> ()) {
         
-        let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id": id, "amount": monto, "issuer.id": Int(bank)]
+        //let parametros: Parameters = ["public_key": "444a9ef5-8a6b-429f-abdf-587639155d88", "payment_method_id": id, "amount":monto, "issuer.id": Int(bank)]
         
-        let url: String? = "https://api.mercadopago.com/v1/payment_methods/installments"
+        //let url: String? = "https://api.mercadopago.com/v1/payment_methods/installments"
         print("cuotas", id)
         print("cuotas", monto)
         print("cuotas", bank)
+        let url: String? = "https://api.mercadopago.com/v1/payment_methods/installments?public_key=444a9ef5-8a6b-429f-abdf-587639155d88&payment_method_id="+id+"&amount="+monto+"&issuer.id="+bank
         
-        Alamofire.request(url!, method: .get, parameters: parametros, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
+        Alamofire.request(url!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { response in
             
             var tmp: NSMutableArray = []
             
@@ -97,7 +98,9 @@ class PaymentAppSerives: NSObject {
                 let json = JSON(value)
                 print("cuotas", json)
                 for current in json.arrayValue {
-                    tmp.add(Installment(dictionary: current.dictionaryObject! as NSDictionary)!)
+                    for item in current["payer_costs"].arrayValue {
+                        tmp.add(Installment(dictionary: item.dictionaryObject! as NSDictionary)!)
+                    }
                 }
                 
                 //Return all Rates from WwebServices
